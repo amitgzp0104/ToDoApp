@@ -1,0 +1,17 @@
+<!-- <p>todolist works!</p> -->
+<h1 class="nav">TO DO APP</h1>
+<div class="CreateSection">
+    <input type="text" placeholder="Enter Task" [(ngModel)] = "taskTitle" />
+    <input type="date" placeholder="Date" [(ngModel)] = "taskDate" />
+    <button (click) = "createTask()" class="btn btn-primary">Create Task</button>
+</div>
+
+<div class="ShowSection">
+    <ul>
+        <li *ngFor = "let task of allTasks; let i = index">
+            ID: {{task.id}}   Title: {{task.title}}   Date: {{task.date}}
+            <button (click) = "deleteTask(i)" class="btn btn-danger">Delete</button>
+        </li>
+
+    </ul>
+</div>
